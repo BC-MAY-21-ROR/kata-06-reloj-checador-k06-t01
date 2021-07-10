@@ -1,70 +1,59 @@
 <div class="container">
-    <div class="card">
-        <div class="card-header">
-            <div></div>
-            <div class="float-start">
-                <button onclick="add()" data-bs-toggle="modal" data-bs-target="#modal_a_e" class="btn btn-success" title="Add company"><i class="fas fa-plus-circle"></i></button>
-            </div>
-        </div>
-        <div class="card-body">
-            <table class="table table-hover">
-                <thead>
-                    </tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Address</th>
-                        <th>Actions</th>
-                    <tr>
-                </thead>
-                <tbody>
-                    <% @companies.each.with_index(1) do |company, index|%>
-                        <tr>
-                            <td><%= index %></td>
-                            <td><%=company.name%></td>
-                            <td><%=company.address%></td>
-                            <td>
-                                <%# <button title="View company" class="btn btn-warning"><i class="fas fa-eye"></i></button> %>
-                                <button data-bs-toggle="modal" data-bs-target="#modal_a_e" onclick="edit('<%=company.id%>','<%=company.name%>',' <%=company.address%>')" title="Edit company" class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                                <%= link_to '', company_path(company), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger fas fa-trash-alt'%>                                
-                            </td>
-                        </tr>
-                    <%end%>
-                </tbody>
-            </table>
-        </div>
+  <div class="card">
+    <div class="card-header">
+      <div></div>
+      <div class="float-start">
+        <button data-bs-toggle="modal" data-bs-target="#new_modal" class="btn btn-success" title="Add company">
+          <i class="fas fa-plus-circle"></i>
+        </button>
+      </div>
     </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          </tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Actions</th>
+          <tr>
+        </thead>
+        <tbody>
+          <% @companies.each.with_index(1) do |company, index|%>
+            <tr>
+              <td><%= index %></td>
+              <td><%= company.name %></td>
+              <td><%= company.address %></td>
+              <td>
+                <button onclick="show('<%= company.name %>', '<%= company.address %>')" data-bs-toggle="modal" data-bs-target="#show_modal" title="" class="btn btn-warning"><i class="fas fa-eye"></i></button>
+                <%# TODO: pass id to update company %>
+                <button onclick="edit('<%= company.name %>', '<%= company.address %>')" data-bs-toggle="modal" data-bs-target="#edit_modal" title="" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                <%= link_to '', company_path(company), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger fas fa-trash-alt'%>                                
+              </td>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
+     </div>
+  </div>
 </div>
 
-<%= render 'modal_a_e', company: @company %>
+<%= render 'new_modal', options: 'new_options' %>
+<%= render 'show_modal', options: 'show_options' %>
+<%= render 'edit_modal', options: 'edit_options' %>
 
 <script>
-    function add()
-    {
-        let name_modal = document.getElementById('name_modal');
-        name_modal.innerHTML= 'Add Company';
-        let form_modal = document.getElementById("form_modal");
-        form_modal.action = '/companies'
-         form_modal.method = 'POST';
+ function show(name, address) {
+   let companyName = document.getElementById("company_name_show");
+   let companyAddress = document.getElementById("company_address_show");
+   companyName.value = name
+   companyAddress.value = address 
+ }
 
-        let name_edit = document.getElementById('company_name');
-        let address_edit = document.getElementById('company_address');
-
-        name_edit.value = "";
-        address_edit.value = "";
-    }
-
-    function edit(id,name,address)
-    {
-        let name_modal = document.getElementById('name_modal');
-        name_modal.innerHTML= 'Edit Company';
-        let form_modal = document.getElementById("form_modal");
-        form_modal.action = '/companies/'+id;
-        form_modal.method = 'PUT';
-
-        let name_edit = document.getElementById('company_name');
-        let address_edit = document.getElementById('company_address');
-
-        name_edit.value = name;
-        address_edit.value = address;
-    }
+ function edit(name, address) {
+   let companyName = document.getElementById("company_name_edit");
+   let companyAddress = document.getElementById("company_address_edit");
+   companyName.value = name
+   companyAddress.value = address 
+ }
 </script>
