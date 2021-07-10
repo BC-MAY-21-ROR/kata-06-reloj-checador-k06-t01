@@ -3,7 +3,6 @@ class CompaniesController < ApplicationController
 
   def index
     @companies = Company.all
-    @company = Company.new
   end
 
   def show; end
@@ -16,23 +15,25 @@ class CompaniesController < ApplicationController
     @company = Company.create(company_params)
     if @company.save
       flash[:success] = 'company successfully created'
-      redirect_to companies_path
     else
       flash[:warning] = 'company was not successfully created'
-      redirect_to companies_path
     end
+    redirect_to companies_path
   end
 
   def update
-    @company.update(company_params)
-    flash[:success] = 'Company was updated'
+    if @company.update(company_params)
+      flash[:success] = 'Company was updated'
+    else
+      flash[:warning] = 'Company was not updated'
+    end
     redirect_to companies_path
   end
 
   def destroy
     @company.destroy
     flash[:danger] = 'Company was deleted'
-    redirect_to action: 'index'
+    redirect_to companies_path
   end
 
   private
