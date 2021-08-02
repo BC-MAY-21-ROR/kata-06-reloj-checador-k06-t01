@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable
 
   belongs_to :company
-  has_many :attendances
-  has_many :absences
+  has_many :attendances, dependent: :destroy
+  has_many :absences, dependent: :destroy
   enum status: %i[active inactive]
   enum role: %i[employee admin]
 
