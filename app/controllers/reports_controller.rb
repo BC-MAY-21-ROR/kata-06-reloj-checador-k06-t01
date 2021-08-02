@@ -1,4 +1,6 @@
 class ReportsController < ApplicationController
+  before_action :authenticate_user!
+
   include ReportHelper
 
   before_action :set_companies
