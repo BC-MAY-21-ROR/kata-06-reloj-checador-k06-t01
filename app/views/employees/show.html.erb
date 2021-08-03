@@ -1,18 +1,18 @@
-<div class="container mt-5 col-md-5">
-  <div class="card text-center">
-    <div class="card-header">
-      Name: <%= @employee.name %>
+<div class="container mt-4 col-md-5">
+  
+  <div class="card-employee">
+    <div class="p-4">
+    
+      <p class="bold-font card-size ">Name: <%= @employee.name %> </p>
+      <p class="bold-font card-size ">Email: <%= @employee.email %></p>
+      <p class="card-size">Position: <%= @employee.position %></p>
+      <p class="card-size">Employee number: <%= @employee.employee_number %></p>
+      <p class="card-size">Private number: <%= @employee.private_number %></p>
+      <span class="badge <%= @employee_presenter.badge_color %> card-size"> <%= @employee.status %> </span>
     </div>
-    <div class="card-body">
-      <span class="badge <%= @employee_presenter.badge_color %>"><%= @employee.status %></span>
-      <h5 class="card-title">Email: <%= @employee.email %></h5>
-      <h5 class="card-title">Position: <%= @employee.position %></h5>
-      <p class="card-text">Employee number: <%= @employee.employee_number %></p>
-      <p class="card-text">Private number: <%= @employee.private_number %></p>
-    </div>
-    <div class="card-footer">
-      <%= link_to 'Back', employees_path, class: 'btn btn-danger'%>
-      <%= link_to 'Edit', edit_employee_path(@employee), class: 'btn form-btn'%>
+    <div>
+      <%= link_to 'Back', employees_path, class: 'btn btn-danger card-size'%>
+      <%= link_to 'Edit', edit_employee_path(@employee), class: 'btn form-btn card-size'%>
     </div>
   </div>
 </div>
