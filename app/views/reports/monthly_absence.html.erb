@@ -7,5 +7,8 @@
         <%= link_to "#{month[:name]}", monthly_absence_pdf_path(month[:id], format: :pdf), class: 'average-save mt-3', target: '_blank'%>
       <% end %>
     </div>
+    <div class="pt-2">
+      <%= link_to 'Back', reports_path, class: 'btn report-back mt-5 mb-4'%>
+    </div>
   </div>
 </div>
