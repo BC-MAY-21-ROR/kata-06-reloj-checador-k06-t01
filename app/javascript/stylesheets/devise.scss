@@ -1,28 +1,4 @@
 .split {
-  height: 100%;
-  padding-top: 20px;
-  width: 50%;
-}
-
-.split h2{
-  margin-top: 10%;
-  text-align: center;
-}
-
-.left {
-  background-color: rgb(255, 255, 255);
-}
-
-.right {
-  background-color: #FF8474;
-  right: 0;
-}
-
-.buttom-log{
-  background-color: #583D72;
-}
-
-.split {
   height: 100vh;
   padding-top: 20px;
   top: 0;
@@ -32,6 +8,7 @@
 
 .split h2{
   color:#9F5F80;
+  margin-top: 10%;
   font-weight: bold;
   text-align: center;
 }
@@ -49,6 +26,7 @@
 
 .centered-image{
   left: 50%;
+  position: absolute;
   text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -59,12 +37,12 @@
 }
 
 .centered-form{
-  left: 50%;
+  left: 370px;
+  position: absolute;
   text-align: center;
-  top: 50%;
+  top: 300px;
   transform: translate(-50%, -50%);
 }
-
 
 .button-log{
   background-color: #583D72;
