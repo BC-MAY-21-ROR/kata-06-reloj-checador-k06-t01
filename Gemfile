@@ -18,9 +18,6 @@ gem 'turbolinks', '~> 5'
 
 gem 'devise'
 
-# Fontawesome_icons
-gem 'font_awesome5_rails'
-
 # pagination
 gem 'pagy'
 
