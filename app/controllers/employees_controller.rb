@@ -4,8 +4,7 @@ class EmployeesController < ApplicationController
   before_action :set_companies, only: %i[new edit create update]
 
   def index
-    per_page ||= 8
-    @pagy, @employees = pagy(UsersQuery.employees, items: per_page)
+    @pagy, @employees = pagy(UsersQuery.employees)
   end
 
   def new
