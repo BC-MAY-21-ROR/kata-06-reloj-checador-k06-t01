@@ -23,12 +23,17 @@
 }
 
 .label-form {
-  color: white;
+  color:#583D72;
   font-weight: bolder;
 }
 
 .form-btn {
   background-color: #583D72;
+  color: white;
+}
+
+.status-btn {
+  background-color: #9F5F80;
   color: white;
 }
 
@@ -47,12 +52,17 @@
   text-align: center;
   transition: 0.3s;
   }
+
  .card-size {
    font-size: 20px;
  }
 
  .bold-font{
    font-weight: bolder;
+ }
+
+ .pagy-color{
+  background-color: #9F5F80;
  }
 
 @media screen and (max-width: 700px) {
@@ -64,7 +74,6 @@
     transition: box-shadow 0.3s;
     width: 330px;
   }
-
   .in-form:focus {
     box-shadow: -8px 10px 0px -7px #583D72, 8px 10px 0px -7px #583D72;
     outline: none;
@@ -82,7 +91,6 @@
   .card-size {
     font-size: 16px;
   }
-  
   .bold-font{
     font-weight: bolder;
   }
