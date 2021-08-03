@@ -13,7 +13,7 @@ User.create(name: 'michael', email: 'mich@gmail.com', position: 'Coordinator', p
 # Employees
 10.times do
   User.create(name: Faker::Name.female_first_name, email: Faker::Internet.safe_email, position: 'software engineer',
-              private_number: Faker::Number.between(from: 12_322, to: 20_000),
+              role: 'employee', private_number: Faker::Number.between(from: 12_322, to: 20_000),
               employee_number: Faker::Number.between(from: 784_122, to: 800_000), company_id: '2')
 end
 
