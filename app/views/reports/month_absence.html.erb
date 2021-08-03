@@ -1,8 +1,7 @@
-<%= wicked_pdf_stylesheet_link_tag('reports') %>
 <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" %>
 
-<h1 class="title-report"><%= @company %> absences</h1>
-<table class="table text-center mt-5">
+<h1 class="text-muted"><%= @company %> absences</h1>
+<table class="table table-danger text-center mt-5">
   <thead>
     <tr>
       <th scope="col">Employee name</th>
