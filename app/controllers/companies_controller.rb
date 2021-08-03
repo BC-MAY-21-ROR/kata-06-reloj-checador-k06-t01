@@ -3,8 +3,7 @@ class CompaniesController < ApplicationController
   before_action :set_company, only: %i[update destroy]
 
   def index
-    per_page ||= 8
-    @pagy, @companies = pagy(Company.all, items: per_page)
+    @pagy, @companies = pagy(Company.all)
     @company = Company.new
   end
 
@@ -14,7 +13,7 @@ class CompaniesController < ApplicationController
       flash[:success] = 'company was successfully created'
       redirect_to companies_path
     else
-      flash[:danger] = 'company was not created'
+      flash[:error] = 'company was not created'
     end
   end
 
@@ -23,13 +22,13 @@ class CompaniesController < ApplicationController
       flash[:success] = 'company was successfully updated'
       redirect_to companies_path
     else
-      flash[:danger] = 'company was not updated'
+      flash[:error] = 'company was not updated'
     end
   end
 
   def destroy
     @company.destroy
-    flash[:danger] = 'company was successfully destroyed'
+    flash[:error] = 'company was successfully destroyed'
     redirect_to companies_path
   end
 

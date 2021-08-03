@@ -1,11 +1,7 @@
 .split {
   height: 100%;
-  overflow-x: hidden;
   padding-top: 20px;
-  position: fixed;
-  top: 0;
   width: 50%;
-  z-index: 1;
 }
 
 .split h2{
@@ -15,7 +11,6 @@
 
 .left {
   background-color: rgb(255, 255, 255);
-  left: 0;
 }
 
 .right {
@@ -28,10 +23,8 @@
 }
 
 .split {
-  height: 100%;
-  overflow-x: hidden;
+  height: 100vh;
   padding-top: 20px;
-  position: fixed;
   top: 0;
   width: 50%;
   z-index: 1;
@@ -40,7 +33,6 @@
 .split h2{
   color:#9F5F80;
   font-weight: bold;
-  margin-top: 10%;
   text-align: center;
 }
 
@@ -52,11 +44,11 @@
 .right {
   background-color: #FF8474;
   right: 0;
+  position: relative;
 }
 
 .centered-image{
   left: 50%;
-  position: absolute;
   text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -68,7 +60,6 @@
 
 .centered-form{
   left: 50%;
-  position: absolute;
   text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
