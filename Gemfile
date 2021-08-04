@@ -53,6 +53,10 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'rubocop', '~> 1.12'
+  gem 'rubocop-rails', '~> 2.9'
+  gem 'rubycritic', '~> 4.6'
+  gem 'rubycritic-small-badge', '~> 0.2.1'
   gem 'spring'
 end
 
