@@ -66,5 +66,5 @@ rspec spec/models/"name_of_spec_file"
 
 ## Autors ✒️
 
-* **Ariel cabrera** - [villanuevand](https://github.com/juliocabrera820)
-* **Jairo Olan** - [fulanitodetal](https://github.com/jairolan)
+* **Ariel cabrera** - [juliocabrera820](https://github.com/juliocabrera820)
+* **Jairo Olan** - [jairolan](https://github.com/jairolan)
