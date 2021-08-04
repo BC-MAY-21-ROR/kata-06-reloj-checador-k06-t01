@@ -57,6 +57,7 @@ group :development do
   gem 'rubocop-rails', '~> 2.9'
   gem 'rubycritic', '~> 4.6'
   gem 'rubycritic-small-badge', '~> 0.2.1'
+  gem 'sandi_meter', '~> 1.2'
   gem 'spring'
 end
 
