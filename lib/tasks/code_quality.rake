@@ -6,6 +6,7 @@ if Rails.env.development?
   { spec: 65, app: 90 }.each do |dir, percentage|
     RubyCriticSmallBadge.configure do |config|
       config.minimum_score = percentage
+      config.output_path = "badges/#{dir}"
     end
 
     RubyCritic::RakeTask.new("rubycritic:#{dir}") do |task|
@@ -18,6 +19,7 @@ if Rails.env.development?
       )
       task.paths = FileList["#{dir}/**/*.rb"]
     end
+    Rake::Task["rubycritic:#{dir}"].invoke
   end
 
   task :sandi_meter do
