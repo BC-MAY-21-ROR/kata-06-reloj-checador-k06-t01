@@ -65,7 +65,7 @@ The attendance web app must meet the following reuqirements:
 - Libertad para utilizar cualquier diseño, imágenes, etc, que considere necesarios y apropiados
 
 ## Setup
-En [este elnace](setup/README.md) se describen los pasos necesarios para ejecutar/probar este proyecto, así como los integrantes de este equipo
+En [este enlace](setup/README.md) se describen los pasos necesarios para ejecutar/probar este proyecto, así como los integrantes de este equipo
 
 ## Enlaces
 [Encuentra aquí una lista completa de recursos de ayuda](https://github.com/bright-coders/commons/tree/master/topics/resources)
