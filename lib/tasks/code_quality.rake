@@ -1,6 +1,7 @@
 if Rails.env.development?
   require 'rubycritic_small_badge'
   require 'rubycritic/rake_task'
+  require 'sandi_meter/file_scanner'
 
   { spec: 65, app: 90 }.each do |dir, percentage|
     RubyCriticSmallBadge.configure do |config|
@@ -19,5 +20,9 @@ if Rails.env.development?
     end
   end
 
-  task code_quality: %i[rubycritic:app rubycritic:spec]
+  task :sandi_meter do
+    pp `sandi_meter -dg -o tmp/sandi_meter`
+  end
+
+  task code_quality: %i[rubycritic:spec rubycritic:app sandi_meter]
 end
