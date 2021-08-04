@@ -6,3 +6,5 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 Bundler/OrderedGems:
   Enabled: false
+IrresponsibleModule:
+  Enabled: false
